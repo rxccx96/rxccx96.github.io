@@ -1,408 +1,149 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lorenzo Ricci — Academic Homepage</title>
-  <meta name="description" content="Lorenzo Ricci, Postdoctoral Researcher at the University of Bayreuth. Vegetation ecology and conservation science." />
-
-  <style>
-    :root{
-      --bg0:#070B14;
-      --bg1:#0b1220;
-      --card: rgba(255,255,255,.07);
-      --card2: rgba(255,255,255,.05);
-      --text:#ECF3FF;
-      --muted: rgba(236,243,255,.72);
-      --border: rgba(255,255,255,.12);
-      --link:#7dd3fc;
-      --accent:#a78bfa;
-      --shadow: 0 14px 40px rgba(0,0,0,.40);
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ margin:0; padding:0; }
-    body{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color: var(--text);
-      background:
-        radial-gradient(1200px 700px at 15% -10%, rgba(167,139,250,.38) 0%, transparent 55%),
-        radial-gradient(1100px 650px at 95% 0%, rgba(125,211,252,.28) 0%, transparent 55%),
-        linear-gradient(180deg, var(--bg1) 0%, var(--bg0) 100%);
-      line-height: 1.6;
-    }
-
-    a{ color: var(--link); text-decoration:none; }
-    a:hover{ text-decoration: underline; }
-
-    .container{
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 0 18px;
-    }
-
-    /* top bar */
-    .site-header{
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(10px);
-      background: rgba(11,18,32,.66);
-      border-bottom: 1px solid var(--border);
-    }
-    .header-inner{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      padding: 18px 0;
-    }
-
-    /* profile block */
-    .with-photo{
-      display:flex;
-      gap:16px;
-      align-items:center;
-      min-width: min(680px, 100%);
-    }
-    .profile-pic{
-      width: 96px;
-      height: 96px;
-      border-radius: 18px; /* “friendly” modern */
-      object-fit: cover;
-      border: 1px solid var(--border);
-      box-shadow: 0 12px 30px rgba(0,0,0,.35);
-      flex: 0 0 auto;
-      background: rgba(255,255,255,.06);
-    }
-    h1{
-      margin:0;
-      font-size: 30px;
-      letter-spacing: -0.02em;
-    }
-    .subtitle{
-      margin: 6px 0 6px;
-      color: var(--muted);
-      font-size: 1.02rem;
-    }
-    .small{ margin:0; color: var(--muted); font-size: .95rem; }
-
-    /* nav */
-    .nav{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .nav a{
-      color: var(--text);
-      padding: 8px 10px;
-      border-radius: 12px;
-      border: 1px solid transparent;
-      background: transparent;
-    }
-    .nav a:hover{
-      text-decoration:none;
-      border-color: var(--border);
-      background: rgba(255,255,255,.05);
-    }
-
-    /* hero */
-    main.container{ padding: 18px 0 48px; }
-    .hero{
-      margin-top: 10px;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,.07) 0%, rgba(255,255,255,.04) 100%);
-      box-shadow: var(--shadow);
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap: 14px;
-    }
-    @media (max-width: 880px){
-      .hero{ grid-template-columns: 1fr; }
-      .with-photo{ min-width: 100%; }
-      .profile-pic{ width: 86px; height: 86px; }
-    }
-    .hero .panel{
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 14px;
-      background: rgba(255,255,255,.04);
-    }
-
-    /* cards */
-    .card{
-      margin: 14px 0;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 18px;
-      background: linear-gradient(180deg, var(--card) 0%, var(--card2) 100%);
-      box-shadow: var(--shadow);
-    }
-    h2{
-      margin: 0 0 10px;
-      font-size: 20px;
-      letter-spacing: -0.01em;
-    }
-    h3{
-      margin: 14px 0 8px;
-      font-size: 15px;
-      color: var(--muted);
-      font-weight: 600;
-      letter-spacing: .01em;
-      text-transform: uppercase;
-    }
-
-    /* buttons */
-    .btns{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 10px; }
-    .button{
-      display:inline-block;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(125,211,252,.35);
-      background: rgba(125,211,252,.10);
-      color: var(--text);
-    }
-    .button:hover{ text-decoration:none; background: rgba(125,211,252,.16); }
-    .button.ghost{
-      border-color: var(--border);
-      background: rgba(255,255,255,.05);
-    }
-
-    /* lists */
-    ul{ margin: 0; padding-left: 18px; }
-    li{ margin: 6px 0; }
-
-    /* publications */
-    .pubs{
-      margin: 0;
-      padding-left: 18px;
-    }
-    .pubs li{
-      margin: 10px 0 14px;
-    }
-    .pub-title{ font-weight: 700; }
-    .pub-authors{ color: var(--muted); }
-    .pub-venue{ color: var(--muted); font-style: italic; }
-    .pub-links a{
-      display:inline-block;
-      margin-right: 10px;
-      padding: 6px 10px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(255,255,255,.04);
-      text-decoration:none;
-    }
-    .pub-links a:hover{
-      background: rgba(255,255,255,.07);
-      text-decoration:none;
-    }
-
-    /* footer */
-    footer{
-      margin-top: 18px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: .95rem;
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lorenzo Ricci – Ecology & Conservation</title>
+  <meta name="description" content="Lorenzo Ricci, postdoctoral researcher in vegetation ecology and conservation science.">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="with-photo">
-        <!-- IMPORTANT: this matches your current filename (with spaces) -->
-        <img class="profile-pic" src="LorenzoRicci%20-%20image%20(1).jpeg" alt="Lorenzo Ricci" />
-        <div>
-          <h1>Lorenzo Ricci</h1>
-          <p class="subtitle">Postdoctoral Researcher · University of Bayreuth · Vegetation ecology & conservation science</p>
-          <p class="small">
-            <a href="mailto:lorenzric1996@gmail.com">lorenzric1996@gmail.com</a> ·
-            <a href="https://orcid.org/0000-0002-0411-2435" target="_blank" rel="noreferrer">ORCID</a> ·
-            <a href="https://scholar.google.com/" target="_blank" rel="noreferrer">Google Scholar</a> ·
-            <a href="https://github.com/rxccx96" target="_blank" rel="noreferrer">GitHub</a>
-          </p>
-        </div>
-      </div>
 
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#pubs">Publications</a>
-        <a href="#conferences">Conferences</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="container header-inner">
 
-  <main class="container">
+    <div class="profile">
+      <!-- usa il nome file ESATTO che hai ora -->
+      <img src="LorenzoRicci%20-%20image%20(1).jpeg" alt="Lorenzo Ricci" class="avatar">
 
-    <section class="hero" id="about">
-      <div class="panel">
-        <h2>About</h2>
-        <p>
-          I’m a postdoctoral researcher at the University of Bayreuth working at the intersection of
-          vegetation ecology and conservation science. My research focuses on biodiversity patterns,
-          protected areas effectiveness (including Natura 2000), and vegetation dynamics across European
-          landscapes, with particular emphasis on mountain and Mediterranean ecosystems.
+      <div class="profile-text">
+        <h1>Lorenzo Ricci</h1>
+        <p class="subtitle">
+          Postdoctoral researcher in vegetation ecology and conservation science
         </p>
 
-        <div class="btns">
-          <!-- IMPORTANT: this matches your current filename -->
-          <a class="button" href="CV_LorenzoRicci.pdf" target="_blank" rel="noreferrer">Download CV (PDF)</a>
-          <a class="button ghost" href="#pubs">See publications</a>
-          <a class="button ghost" href="#contact">Get in touch</a>
+        <p class="links">
+          <a href="mailto:lorenzric1996@gmail.com">lorenzric1996@gmail.com</a> ·
+          <a href="https://orcid.org/0000-0002-0411-2435" target="_blank">ORCID</a> ·
+          <a href="https://scholar.google.com/" target="_blank">Google Scholar</a> ·
+          <a href="https://github.com/rxccx96" target="_blank">GitHub</a>
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="CV_LorenzoRicci.pdf" target="_blank">Download CV</a>
+          <a class="btn" href="#research">Research</a>
+          <a class="btn" href="#pubs">Publications</a>
         </div>
       </div>
+    </div>
 
-      <div class="panel">
-        <h2>Quick info</h2>
-        <ul>
-          <li><strong>Affiliations:</strong> University of Bayreuth; University of Bologna</li>
-          <li><strong>Core areas:</strong> plant diversity, biogeography, protected areas, disturbance ecology</li>
-          <li><strong>Tools:</strong> R, QGIS, MS Office</li>
-          <li><strong>Languages:</strong> Italian (native), English (C1)</li>
-        </ul>
-      </div>
-    </section>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#pubs">Publications</a>
+      <a href="#conferences">Conferences</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-    <section class="card" id="pubs">
-      <h2>Publications</h2>
-      <p class="small">
-        Click “DOI” to open the article online.
-      </p>
+  </div>
+</header>
 
-      <h3>Peer-reviewed</h3>
-      <ol class="pubs">
-        <li>
-          <span class="pub-title">Elevational patterns of plant dispersal ability in Southern Europe</span><br/>
-          <span class="pub-authors">Di Musciano, M.; Ricci, L.; et al.</span><br/>
-          <span class="pub-venue">Plant Biosystems, 2023</span>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1080/11263504.2022.2089761" target="_blank" rel="noreferrer">DOI</a>
-          </div>
-        </li>
+<main class="container">
 
-        <li>
-          <span class="pub-title">A multitaxonomic assessment of Natura 2000 effectiveness across European biogeographic regions</span><br/>
-          <span class="pub-authors">Ricci, L.; Di Musciano, M.; Sabatini, F.M.; et al.</span><br/>
-          <span class="pub-venue">Conservation Biology, 2023</span>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1111/cobi.14212" target="_blank" rel="noreferrer">DOI</a>
-          </div>
-        </li>
+  <!-- ABOUT -->
+  <section id="about" class="card">
+    <h2>About</h2>
 
-        <li>
-          <span class="pub-title">Short-term functional response to post-fire vegetation dynamic: A case study in a Mediterranean Pinus halepensis forest</span><br/>
-          <span class="pub-authors">Ricci, L.; Farda, B.; Ferrara, A.; et al.</span><br/>
-          <span class="pub-venue">Flora, 2024</span>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.flora.2023.152415" target="_blank" rel="noreferrer">DOI</a>
-          </div>
-        </li>
+    <p>
+      I am a postdoctoral researcher at the University of Bayreuth, working at the intersection
+      of vegetation ecology and conservation science. My research explores how plant communities
+      respond to environmental change, human pressure, and conservation strategies across Europe.
+    </p>
 
-        <li>
-          <span class="pub-title">Microclimate, an important part of ecology and biogeography</span><br/>
-          <span class="pub-authors">Kemppinen, J.; Lembrechts, J.J.; et al. (incl. Ricci, L.)</span><br/>
-          <span class="pub-venue">Global Ecology and Biogeography, 2024</span>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1111/geb.13834" target="_blank" rel="noreferrer">DOI</a>
-          </div>
-        </li>
+    <p>
+      I am particularly interested in mountain and Mediterranean ecosystems, where climate change,
+      land-use history, and biodiversity conservation interact in complex ways. Through fieldwork,
+      spatial analyses, and large-scale ecological data, my goal is to support evidence-based
+      conservation and biodiversity planning.
+    </p>
+  </section>
 
-        <li>
-          <span class="pub-title">MEDIS - A comprehensive spatial database on Mediterranean islands for biogeographical and evolutionary research</span><br/>
-          <span class="pub-authors">Santi, F.; Testolin, R.; Zannini, P.; et al. (incl. Ricci, L.)</span><br/>
-          <span class="pub-venue">Global Ecology and Biogeography, 2024</span>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1111/geb.13855" target="_blank" rel="noreferrer">DOI</a>
-          </div>
-        </li>
+  <!-- RESEARCH -->
+  <section id="research" class="card">
+    <h2>Research interests</h2>
+    <ul class="bullets">
+      <li>Plant diversity and biogeography</li>
+      <li>Protected areas and Natura 2000 effectiveness</li>
+      <li>Vegetation dynamics and disturbance ecology</li>
+      <li>Mountain and Mediterranean ecosystems</li>
+      <li>Macroecology and conservation planning</li>
+    </ul>
+  </section>
 
-        <li>
-          <span class="pub-title">Elevational patterns of plant species richness and phylogenetic diversity in a Mediterranean island</span><br/>
-          <span class="pub-authors">Di Musciano, M.; Calvia, G.; Ruggero, A.; et al. (incl. Ricci, L.)</span><br/>
-          <span class="pub-venue">Perspectives in Plant Ecology, Evolution and Systematics, 2024</span>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.ppees.2024.125815" target="_blank" rel="noreferrer">DOI</a>
-          </div>
-        </li>
+  <!-- PUBLICATIONS -->
+  <section id="pubs" class="card">
+    <h2>Selected publications</h2>
 
-        <li>
-          <span class="pub-title">Representativeness of the Natura 2000 Network for preserving plant biodiversity in the European Union</span><br/>
-          <span class="pub-authors">Di Musciano, M.; Zannini, P.; Testolin, R.; et al. (incl. Ricci, L.)</span><br/>
-          <span class="pub-venue">Conservation Biology</span>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1111/cobi.70158" target="_blank" rel="noreferrer">DOI</a>
-          </div>
-        </li>
+    <ol class="pubs">
+      <li>
+        <strong>A multitaxonomic assessment of Natura 2000 effectiveness across European biogeographic regions</strong><br>
+        Ricci L. et al. — <em>Conservation Biology</em> (2023) ·
+        <a href="https://doi.org/10.1111/cobi.14212" target="_blank">DOI</a>
+      </li>
 
-        <li>
-          <span class="pub-title">Do Protected Areas Safeguard Groundwater Biodiversity? Insights from European obligate groundwater-dwelling Copepods</span><br/>
-          <span class="pub-authors">Cerasoli, F.; Ricci, L.; et al.</span><br/>
-          <span class="pub-venue">Conservation Biology</span>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1111/cobi.70208" target="_blank" rel="noreferrer">DOI</a>
-          </div>
-        </li>
-      </ol>
+      <li>
+        <strong>Elevational patterns of plant dispersal ability in Southern Europe</strong><br>
+        Di Musciano M., Ricci L. et al. — <em>Plant Biosystems</em> (2023) ·
+        <a href="https://doi.org/10.1080/11263504.2022.2089761" target="_blank">DOI</a>
+      </li>
 
-      <h3>Under review</h3>
-      <ul>
-        <li>Effects of grain size on plant diversity patterns in a Mediterranean mountain (Journal of Vegetation Science)</li>
-        <li>The role of protected areas in preserving broadleaved deciduous forest understory plant species (Biodiversity and Conservation)</li>
-        <li>Mapping Italy’s sacred natural sites to support assessment of OECMs (Journal of Biogeography)</li>
-      </ul>
+      <li>
+        <strong>Short-term functional response to post-fire vegetation dynamics in a Mediterranean forest</strong><br>
+        Ricci L. et al. — <em>Flora</em> (2024) ·
+        <a href="https://doi.org/10.1016/j.flora.2023.152415" target="_blank">DOI</a>
+      </li>
 
-      <p class="small">
-        Full list also on <a href="https://scholar.google.com/" target="_blank" rel="noreferrer">Google Scholar</a>.
-      </p>
-    </section>
+      <li>
+        <strong>Microclimate, an important part of ecology and biogeography</strong><br>
+        Kemppinen J. et al. — <em>Global Ecology and Biogeography</em> (2024) ·
+        <a href="https://doi.org/10.1111/geb.13834" target="_blank">DOI</a>
+      </li>
+    </ol>
 
-    <section class="card" id="conferences">
-      <h2>Selected conferences (oral communications)</h2>
-      <ul>
-        <li>Plot sizes affect patterns of plant diversity along an elevational gradient — Madrid (SISV 55th; IAVS 64th), 2022</li>
-        <li>Assessment of priority species inside and outside protected areas within the European Union — Bozen (CYBO), 2023</li>
-        <li>A multitaxonomic assessment of Natura 2000 effectiveness — Cambridge (SCCS), 2024; Bologna (ECCB), 2024</li>
-        <li>Representativeness of the Natura 2000 Network — L’Aquila (SCB Italy Chapter), 2025</li>
-      </ul>
-    </section>
+    <p class="small">
+      Full list available on <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>.
+    </p>
+  </section>
 
-    <section class="card" id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li><strong>Fieldwork:</strong> botanical surveys in high-altitude landscapes; monitoring endemic species</li>
-        <li><strong>Software:</strong> R, QGIS, MS Office</li>
-        <li><strong>Memberships:</strong> Treasurer, Society of Conservation Biology – Italy Chapter; Member, Italian Society of Botany</li>
-      </ul>
-    </section>
+  <!-- CONFERENCES -->
+  <section id="conferences" class="card">
+    <h2>Conferences & talks</h2>
+    <ul class="bullets">
+      <li>SCCS – Cambridge (2024): Natura 2000 effectiveness</li>
+      <li>ECCB – Bologna (2024): multitaxonomic assessment of protected areas</li>
+      <li>SCB Italy – L’Aquila (2025): Natura 2000 representativeness</li>
+    </ul>
+  </section>
 
-    <section class="card" id="contact">
-      <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:lorenzric1996@gmail.com">lorenzric1996@gmail.com</a><br/>
-        ORCID: <a href="https://orcid.org/0000-0002-0411-2435" target="_blank" rel="noreferrer">0000-0002-0411-2435</a>
-      </p>
-      <p class="small">
-        Last updated: <span id="lastUpdated"></span>
-      </p>
-    </section>
+  <!-- CONTACT -->
+  <section id="contact" class="card">
+    <h2>Contact</h2>
+    <p>
+      Email: <a href="mailto:lorenzric1996@gmail.com">lorenzric1996@gmail.com</a><br>
+      ORCID: <a href="https://orcid.org/0000-0002-0411-2435" target="_blank">0000-0002-0411-2435</a>
+    </p>
+  </section>
 
-    <footer>
-      © <span id="year"></span> Lorenzo Ricci · Built with GitHub Pages
-    </footer>
+  <footer class="footer">
+    © <span id="year"></span> Lorenzo Ricci · GitHub Pages
+  </footer>
 
-  </main>
+</main>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("lastUpdated").textContent = document.lastModified;
-  </script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
