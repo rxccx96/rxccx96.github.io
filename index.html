@@ -1,11 +1,183 @@
-<!DOCTYPE html>
-<html lang="it">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Il mio sito</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lorenzo Ricci — Academic Homepage</title>
+  <meta name="description" content="Lorenzo Ricci, PhD - Postdoctoral researcher in Disturbance Ecology." />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <h1>Ciao, sono [Tuo Nome]</h1>
-  <p>Questo è il mio sito personale.</p>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="id-block with-photo">
+        <img src="profile.jpg" alt="Lorenzo Ricci" class="profile-pic" />
+        <div>
+          <h1>Lorenzo Ricci</h1>
+          <p class="subtitle">
+            Postdoctoral Researcher — Plant Ecology           </p>
+          <p class="small">
+            Email:
+            <a href="mailto:lorenzric1996@gmail.com">lorenzric1996@gmail.com</a>
+            ·
+            <a href="https://orcid.org/0000-0002-0411-2435" target="_blank">ORCID</a>
+            ·
+            <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>
+            ·
+            <a href="https://github.com/rxccx96" target="_blank">GitHub</a>
+          </p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#about">Bio</a>
+        <a href="#research">Research</a>
+        <a href="#pubs">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#teaching">Activities</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- BIO -->
+    <section id="about" class="card">
+      <h2>Bio</h2>
+      <p>
+I am a postdoctoral researcher at the University of Bayreuth working at the intersection of vegetation ecology and conservation science. I hold a PhD in Environmental Sciences and I investigate the spatial patterns and drivers of plant biodiversity across terrestrial ecosystems, with a particular focus on mountain and mediterranean landscapes. More broadly, I'm interested in plant community dynamics along environmental gradients, disturbance ecology (e.g. fire) and the impacts of human pressures and global change on biodiversity with the goal of supporting evidence-based conservation planning at regional and European scales.
+      </p>
+
+      <p class="small">
+        <a class="button" href="cv.pdf" target="_blank">Download CV (PDF)</a>
+      </p>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research" class="card">
+      <h2>Research Interests</h2>
+      <ul class="bullets">
+        <li>Plant Ecology </li> 
+        <li>Vegetation dynamics and Disturbance ecology</li>
+        <li>Conservation Biology</li>
+        <li>Macroecology and conservation planning</li>
+      </ul>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="pubs" class="card">
+      <h2>Publications</h2>
+
+      <ol class="pubs">
+        <li>
+          <span class="pub-title">
+            A multitaxonomic assessment of Natura 2000 effectiveness across European biogeographic regions
+          </span><br/>
+          <span class="pub-authors">Ricci L., et al.</span><br/>
+          <span class="pub-venue">Conservation Biology, 2023</span>
+          · <a href="https://doi.org/10.1111/cobi.14212" target="_blank">DOI</a>
+        </li>
+
+        <li>
+          <span class="pub-title">
+            Elevational patterns of plant dispersal ability in Southern Europe
+          </span><br/>
+          <span class="pub-authors">Di Musciano M., Ricci L., et al.</span><br/>
+          <span class="pub-venue">Plant Biosystems, 2023</span>
+          · <a href="https://doi.org/10.1080/11263504.2022.2089761" target="_blank">DOI</a>
+        </li>
+
+        <li>
+          <span class="pub-title">
+            Short-term functional response to post-fire vegetation dynamics in a Mediterranean forest
+          </span><br/>
+          <span class="pub-authors">Ricci L., et al.</span><br/>
+          <span class="pub-venue">Flora, 2024</span>
+          · <a href="https://doi.org/10.1016/j.flora.2023.152415" target="_blank">DOI</a>
+        </li>
+
+        <li>
+          <span class="pub-title">
+            Microclimate, an important part of ecology and biogeography
+          </span><br/>
+          <span class="pub-authors">Kemppinen J., et al. (incl. Ricci L.)</span><br/>
+          <span class="pub-venue">Global Ecology and Biogeography, 2024</span>
+          · <a href="https://doi.org/10.1111/geb.13834" target="_blank">DOI</a>
+        </li>
+      </ol>
+
+      <p class="small">
+        Full list available on
+        <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>.
+      </p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="card">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="project">
+          <h4>Natura 2000 Effectiveness</h4>
+          <p>
+            Multitaxonomic evaluation of protected areas effectiveness across European
+            biogeographic regions.
+          </p>
+        </div>
+
+        <div class="project">
+          <h4>Mediterranean Vegetation Dynamics</h4>
+          <p>
+            Functional and compositional responses of plant communities to fire disturbance.
+          </p>
+        </div>
+
+        <div class="project">
+          <h4>Mountain Plant Diversity</h4>
+          <p>
+            Drivers of plant diversity patterns along elevational gradients in mountain systems.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEACHING / ACTIVITIES -->
+    <section id="teaching" class="card">
+      <h2>Academic Activities</h2>
+      <ul class="bullets">
+        <li>Postdoctoral Researcher, University of Bayreuth (2026–ongoing)</li>
+        <li>Postdoctoral Researcher, University of Bologna (2024–ongoing)</li>
+        <li>Visiting PhD Student: University of Copenhagen, Masaryk University</li>
+        <li>Treasurer, Society of Conservation Biology – Italy Chapter</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:lorenzric1996@gmail.com">lorenzric1996@gmail.com</a><br/>
+        Location: Italy / Germany
+      </p>
+      <p class="small">
+        Last updated: <span id="lastUpdated"></span>
+      </p>
+    </section>
+
+    <footer class="footer small">
+      © <span id="year"></span> Lorenzo Ricci · Hosted on GitHub Pages
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("lastUpdated").textContent = document.lastModified;
+  </script>
+
 </body>
 </html>
